@@ -5,14 +5,17 @@ source "https://rubygems.org"
 git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
 # gem "rails"
+#
+
+group :development do
+  gem 'rack'
+  gem 'rerun'
+  gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+  gem 'rack-cors', :require => 'rack/cors'
+
+  gem 'puma'
+end
 
 gem 'mini_magick'
-
-
-
-# convert assets/map/hunters_lodge_world_2020-02-22.png -crop 32x32 +repage  assets/map/tiles/4/tile%03d.png
-# 4, 8, 16, 32, 64, 128
-# 1, 2, 3, 4, 5, 6
-#
-#
-
+gem 'grape'
+gem 'serverless-rack'

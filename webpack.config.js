@@ -23,7 +23,7 @@ module.exports = {
             'vue$': 'vue/dist/vue.esm.js'
         },
         plugins: [PnpWebpackPlugin],
-        extensions: [ '*', '.js', '.vue', '.json', '.ts' ],
+        extensions: [ '*', '.js','.ts', '.vue', '.json'  ],
     },
     resolveLoader: {
         plugins: [PnpWebpackPlugin.moduleLoader(module)]
@@ -46,13 +46,13 @@ module.exports = {
                 loader: require.resolve('vue-loader')
             },
             {
-                test: /\.[t]s$/,
+                test: /\.ts$/,
                 include: APP_DIR,
                 loader: require.resolve('ts-loader'),
-                options: PnpWebpackPlugin.tsLoaderOptions()
+                options: PnpWebpackPlugin.tsLoaderOptions({ transpileOnly: true})
             },
             {
-                test: /\.[j]s$/,
+                test: /\.js$/,
                 include: APP_DIR,
                 loader: require.resolve('babel-loader')
             },

@@ -1,28 +1,30 @@
 <template>
     <div>
         <h1>{{ name }}</h1>
-        <l-map style="height: 350px" zoom="0" maxZoom="4">
+        <l-map style="height: 100%" :zoom="0" :maxZoom="4">
             <l-tile-layer url="map/tiles/{z}/{x}-{y}.jpeg" />
         </l-map>
     </div>
 </template>
 
-<script>
-    import * as L from 'leaflet';
-    import { LMap, LTileLayer, LMarker } from 'vue2-leaflet';
-    import 'leaflet/dist/leaflet.css';
+<script lang="ts">
+import Vue from 'vue';
+import * as L from 'leaflet';
+// noinspection TypeScriptCheckImport
+import { LMap, LTileLayer, LMarker } from 'vue2-leaflet';
+import 'leaflet/dist/leaflet.css';
+import Component from 'vue-class-component'
 
-    export default {
-        name: "Home",
-        data: () => ({
-          name: 'banana man'
-        }),
-        components: {
-            LMap,
-            LTileLayer,
-            LMarker
-        }
+@Component({
+    components: {
+        LMap,
+        LTileLayer,
+        LMarker
     }
+})
+export default class Home extends Vue {
+    name = 'banana man'
+}
 </script>
 
 <style type="scss" scoped>

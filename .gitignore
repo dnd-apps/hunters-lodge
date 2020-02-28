@@ -5,3 +5,7 @@
 dist
 assets
 .idea
+tmp
+.bundle
+node_modules
+

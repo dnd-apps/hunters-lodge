@@ -4,8 +4,15 @@
     "noImplicitAny": true,
     "module": "esnext",
     "target": "esnext",
+    "moduleResolution": "node",
     "jsx": "react",
     "allowJs": true,
-    "lib": ["esnext", "dom"]
+    "lib": ["esnext", "dom"],
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "noEmit": false,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "sourceMap": true
   }
 }
