@@ -52,7 +52,7 @@ GEM
     mustermann-grape (1.0.1)
       mustermann (>= 1.0.0)
     nio4r (2.5.2)
-    puma (4.3.1)
+    puma (4.3.3)
       nio4r (~> 2.0)
     rack (2.2.2)
     rack-accept (0.4.5)
@@ -70,7 +70,6 @@ GEM
     thread_safe (0.3.6)
     tzinfo (1.2.6)
       thread_safe (~> 0.1)
-    wdm (0.1.1)
     zeitwerk (2.2.2)
 
 PLATFORMS
@@ -85,7 +84,6 @@ DEPENDENCIES
   rack-cors
   rerun
   serverless-rack
-  wdm (>= 0.1.0)
 
 BUNDLED WITH
    2.1.2
