@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 require 'rack/cors'
-require_relative 'api/app'
+require_relative 'src/api/app'
 
 
-puts HuntersLodge::Api.routes.map { |i| i.path  }
+puts HuntersLodge::Api.routes.map(&:path)
 
 use Rack::Cors do
   allow do
@@ -11,7 +13,7 @@ use Rack::Cors do
 
     resource '*',
              headers: :any,
-             methods: [:get, :post, :put, :patch, :delete, :options, :head]
+             methods: %i[get post put patch delete options head]
   end
 end
 

@@ -5,6 +5,7 @@ const PnpWebpackPlugin = require(`pnp-webpack-plugin`);
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const HtmlTemplatePlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const DotEnvPlugin = require('dotenv-webpack');
 
 const NODE_ENV = process.env.NODE_ENV  || 'development';
 const isDev = /^development$/i.test(NODE_ENV);
@@ -12,8 +13,8 @@ const isDev = /^development$/i.test(NODE_ENV);
 const APP_DIR = path.resolve(__dirname);
 const DIST_DIR =path.resolve(__dirname, 'dist');
 const ASSETS_DIR =path.resolve(__dirname, 'assets');
-const ENTRY_PATH = path.resolve(APP_DIR, 'src/index.js');
-const INDEX_PATH = path.resolve(APP_DIR, 'src/index.html');
+const ENTRY_PATH = path.resolve(APP_DIR, 'src/client/index.ts');
+const INDEX_PATH = path.resolve(APP_DIR, 'src/client/index.html');
 
 module.exports = {
     mode: process.env.NODE_ENV || 'development',
@@ -29,6 +30,9 @@ module.exports = {
         plugins: [PnpWebpackPlugin.moduleLoader(module)]
     },
     plugins: [
+        new DotEnvPlugin({
+            systemvars: true
+        }),
         new HtmlTemplatePlugin({
             template: INDEX_PATH
         }),

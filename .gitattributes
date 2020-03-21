@@ -1,1 +1,9 @@
-* text eol=input
+
+* text eol=lf
+
+*.js text eol=lf
+*.ts text eol=lf
+*.vue text eol=lf
+*.sh text eol=lf
+*.rb text eol=lf
+*.tf text eol=lf

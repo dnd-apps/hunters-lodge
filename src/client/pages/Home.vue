@@ -1,6 +1,7 @@
 <template>
     <div>
         <h1>{{ name }}</h1>
+        <login-button />
         <l-map style="height: 100%" :zoom="0" :maxZoom="4">
             <l-tile-layer url="map/tiles/{z}/{x}-{y}.jpeg" />
         </l-map>
@@ -14,16 +15,19 @@ import * as L from 'leaflet';
 import { LMap, LTileLayer, LMarker } from 'vue2-leaflet';
 import 'leaflet/dist/leaflet.css';
 import Component from 'vue-class-component'
+import LoginButton from '../components/loginButton.vue';
 
 @Component({
     components: {
         LMap,
         LTileLayer,
-        LMarker
+        LMarker,
+        LoginButton
     }
 })
 export default class Home extends Vue {
-    name = 'banana man'
+    name = 'banana man';
+
 }
 </script>
 
