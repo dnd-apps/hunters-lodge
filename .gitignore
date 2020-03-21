@@ -8,4 +8,8 @@ assets
 tmp
 .bundle
 node_modules
-
+.terraform
+*.tfstate
+.env*
+.yarn/releases/
+.yarnrc.yml
